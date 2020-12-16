@@ -17,6 +17,12 @@ gem "turbolinks", "~> 5"
 gem "bootsnap", ">= 1.4.4", require: false
 gem "puma", "~> 5.0"
 
+group :test do
+  gem "capybara", ">= 3.26"
+  gem "selenium-webdriver"
+  gem "webdrivers"
+end
+
 group :development, :test do
   gem "faker"
   gem "pry-byebug"
