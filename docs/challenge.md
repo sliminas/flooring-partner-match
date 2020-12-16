@@ -15,7 +15,8 @@ choose a reliable partner for a reasonable price to work with.
 * The structure of the request from the customer (Client) is as follows:
   * Material for the floor (wood, carpet, tiles)
   * Address (assume that this is the lat long of the house)
-  * Square meters of the floor o Phone number (for the partner to contact the customer)
+  * Square meters of the floor
+  * Phone number (for the partner to contact the customer)
 * The structure of the partner data is as follows:
   * Experienced in flooring materials (wood, carpet, tiles or any combination)
   * Address (assume that this is the lat long of the office)
