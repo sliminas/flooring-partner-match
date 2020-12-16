@@ -246,6 +246,9 @@ Layout/LineLength:
 Metrics/ModuleLength:
   Max: 500
 
+Metrics/MethodLength:
+  Max: 50
+
 Metrics/BlockLength:
   Exclude:
     - 'config/**/*'

@@ -1,0 +1,20 @@
+h1.partner-heading Partners
+
+.partners
+  - @partners.each do |partner|
+    .partner
+      .partner__name
+        |Name:
+        =< partner.name
+      .partner__materials
+        |Materials:
+        =< partner.materials.join(", ")
+      .partner__latitude
+        |Latitude:
+        =< partner.latitude
+      .partner__longitude
+        |Longitude:
+        =< partner.longitude
+      .partner__rating
+        |Rating:
+        =< partner.rating
