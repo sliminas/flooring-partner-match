@@ -6,10 +6,13 @@ location and the partners operating radius covering the customers location.
 
 ## Interesting files
 
-* [seeds.rb](db/seeds.rb)
 * [partner.rb](app/models/partner.rb)
-* [partner_test.rb](test/models/partner_test.rb)
 * [partners_controller.rb](app/controllers/partners_controller.rb)
+* [partners/index.slim](app/views/partners/index.html.slim)
+* [partners.sass](app/assets/stylesheets/partners.sass)
+* [seeds.rb](db/seeds.rb)
+* [partner_helper.rb](test/helpers/partner_helper.rb)
+* [partner_test.rb](test/models/partner_test.rb)
 * [partner_search_test.rb](test/system/partner_search_test.rb)
 
 ## Setup
