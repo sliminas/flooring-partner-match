@@ -2,6 +2,8 @@
 
 class PartnersController < ApplicationController
   def index
-    @partners = Partner.order(rating: :desc).all
+    @partners = Partner
+                .by_material(params[:material])
+                .ordered_by_rating_and_distance(params[:latitude], params[:longitude])
   end
 end

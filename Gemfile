@@ -7,6 +7,8 @@ ruby "2.7.2"
 
 gem "rails", "~> 6.1.0"
 
+gem "pg"
+
 gem "sqlite3", "~> 1.4"
 
 gem "jbuilder", "~> 2.7"

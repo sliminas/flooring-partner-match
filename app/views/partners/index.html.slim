@@ -1,13 +1,18 @@
-h1.partner-heading Partners
+h1.partner-heading = link_to "Partners", root_path
 
 .search
-  = form_for :search do |f|
+  = form_tag partners_path, method: :get, class: "search__form" do
     .search__material
-      = f.label :material
-      =< f.text_field :material
+      = label_tag :material
+      =< select_tag :material, options_for_select(Partner.material_options, params[:material]), include_blank: true
 
     .search__latitude
+      = label_tag :latitude
+      =< text_field_tag :latitude, params[:latitude]
     .search__longitude
+      = label_tag :longitude
+      =< text_field_tag :longitude, params[:longitude]
+    = submit_tag "Search"
 
 .partners
   - @partners.each do |partner|
@@ -27,3 +32,11 @@ h1.partner-heading Partners
       .partner__rating
         |Rating:
         =< partner.rating
+      - if partner.distance_km
+        .partner__distance
+          |Distance:
+          =<> partner.distance_km
+          |km
+        .partner__radius
+          |Radius:
+          =< partner.operating_radius

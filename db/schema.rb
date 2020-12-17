@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_12_16_150644) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "partners", force: :cascade do |t|
     t.string "name"
-    t.string "materials"
+    t.string "materials", array: true
     t.float "latitude"
     t.float "longitude"
     t.integer "operating_radius"

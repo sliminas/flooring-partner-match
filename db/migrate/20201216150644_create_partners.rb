@@ -2,7 +2,7 @@ class CreatePartners < ActiveRecord::Migration[6.1]
   def change
     create_table :partners do |t|
       t.string :name
-      t.string :materials
+      t.string :materials, array: true
 
       t.float :latitude
       t.float :longitude
