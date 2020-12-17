@@ -1,4 +1,4 @@
-h1.partner-heading = link_to "Partners", root_path
+h1.partner-heading = link_to "Flooring Partners", root_path
 
 .search
   = form_tag partners_path, method: :get, class: "search__form" do
@@ -6,38 +6,49 @@ h1.partner-heading = link_to "Partners", root_path
       = label_tag :material
       =< select_tag :material, options_for_select(Partner.material_options, params[:material]), include_blank: true
 
+    .search__phone
+      = label_tag :phone
+      =< text_field_tag :phone, params[:phone]
+
     .search__latitude
       = label_tag :latitude, "Your location's latitude"
       =< text_field_tag :latitude, params[:latitude]
+
+    .search__square_meters
+      = label_tag :square_meters
+      =< number_field_tag :square_meters, params[:square_meters]
+
     .search__longitude
       = label_tag :longitude, "Your location's longitude"
       =< text_field_tag :longitude, params[:longitude]
+
     = submit_tag "Search"
 
 .partners
   - @partners.each do |partner|
     .partner
       .partner__name
-        |Name:
-        =< partner.name
+        span.partner__attribute-name Company name:
+        span =< partner.name
       .partner__materials
-        |Materials:
-        =< partner.materials.join(", ")
+        span.partner__attribute-name Materials:
+        span =< partner.materials.join(", ")
       .partner__latitude
-        |Latitude:
-        =< partner.latitude
+        span.partner__attribute-name Latitude:
+        span =< partner.latitude
       .partner__longitude
-        |Longitude:
-        =< partner.longitude
+        span.partner__attribute-name Longitude:
+        span =< partner.longitude
       .partner__rating
-        |Rating:
-        =< partner.rating
+        span.partner__attribute-name Rating:
+        span =< partner.rating
       .partner__radius
-        |Operating radius:
-        =< partner.operating_radius
+        span.partner__attribute-name Operating radius:
+        span =< partner.operating_radius
 
       - if partner.distance_km
         .partner__distance
-          |Distance:
-          =<> partner.distance_km
-          |km
+          span.partner__attribute-name Distance:
+          span
+            =<> partner.distance_km
+            |km

@@ -13,6 +13,9 @@ body
     display: flex
     flex-wrap: wrap
 
+    div
+      width: 40%
+
 .page-content
   padding: 1rem
 
@@ -21,10 +24,23 @@ body
 
 .partners
   display: grid
-  grid-template-columns: 1fr 1fr
+  grid-template-columns: 1fr
+
+  @media screen and (min-width: 840px)
+    grid-template-columns: 1fr 1fr
 
 .partner
   padding: 1rem
   margin: 1rem
 
   border: 1px solid grey
+
+  &__attribute-name
+    font-weight: bold
+
+  div
+    display: grid
+    grid-template-columns: 1fr
+
+    @media screen and (min-width: 500px)
+      grid-template-columns: 1fr 1fr

@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an example app done as a coding challenge for showing flooring companies (partners) 
+to interested customers depending on their project requirements (flooring material),
+location and the partners operating radius covering the customers location.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+Asuming you have a postgres DB user `rails` with the password `rails` you can run `bin/rails db:setup`.
+This will create the DB and add some test data so that you can see something similar like the following
+when running the server locally.
 
-* System dependencies
+## UI
 
-* Configuration
+### Display all partners
 
-* Database creation
+![all partners](docs/full_page.jpg)
 
-* Database initialization
+### Search by location
+![search by location](docs/search_by_location.png)
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Search by location and material
+![search by location](docs/search_by_location_and_material.png)
