@@ -4,6 +4,14 @@ This is an example app done as a coding challenge for showing flooring companies
 to interested customers depending on their project requirements (flooring material),
 location and the partners operating radius covering the customers location.
 
+## Interesting files
+
+* [seeds.rb](db/seeds.rb)
+* [partner.rb](app/models/partner.rb)
+* [partner_test.rb](test/models/partner_test.rb)
+* [partners_controller.rb](app/controllers/partners_controller.rb)
+* [partner_search_test.rb](test/system/partner_search_test.rb)
+
 ## Setup
 
 Asuming you have a postgres DB user `rails` with the password `rails` you can run `bin/rails db:setup`.
