@@ -1,5 +1,14 @@
 h1.partner-heading Partners
 
+.search
+  = form_for :search do |f|
+    .search__material
+      = f.label :material
+      =< f.text_field :material
+
+    .search__latitude
+    .search__longitude
+
 .partners
   - @partners.each do |partner|
     .partner
