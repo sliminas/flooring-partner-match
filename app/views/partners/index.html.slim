@@ -7,10 +7,10 @@ h1.partner-heading = link_to "Partners", root_path
       =< select_tag :material, options_for_select(Partner.material_options, params[:material]), include_blank: true
 
     .search__latitude
-      = label_tag :latitude
+      = label_tag :latitude, "Your location's latitude"
       =< text_field_tag :latitude, params[:latitude]
     .search__longitude
-      = label_tag :longitude
+      = label_tag :longitude, "Your location's longitude"
       =< text_field_tag :longitude, params[:longitude]
     = submit_tag "Search"
 
@@ -32,11 +32,12 @@ h1.partner-heading = link_to "Partners", root_path
       .partner__rating
         |Rating:
         =< partner.rating
+      .partner__radius
+        |Operating radius:
+        =< partner.operating_radius
+
       - if partner.distance_km
         .partner__distance
           |Distance:
           =<> partner.distance_km
           |km
-        .partner__radius
-          |Radius:
-          =< partner.operating_radius

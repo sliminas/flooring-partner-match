@@ -7,9 +7,9 @@ class PartnerSearchTest < ApplicationSystemTestCase
   include PartnerHelper
 
   setup do
-    @top_partner    = create_partner rating: 4.5
-    @medium_partner = create_partner rating: 3
-    @bad_partner    = create_partner rating: 1
+    @top_partner    = create_partner rating: 4.5, materials: %w[Wood Glas Plastic]
+    @medium_partner = create_partner rating: 3, materials: %w[Glas Plastic]
+    @bad_partner    = create_partner rating: 1, materials: %w[Wood Glas]
 
     visit partners_url
   end
@@ -26,14 +26,11 @@ class PartnerSearchTest < ApplicationSystemTestCase
   end
 
   test "it filters by material" do
-    fill_in "Material", with: "aslasf"
-    click_on "Search"
-
-    assert_not has_content?(@top_partner.name)
-
-    fill_in "Material", with: @top_partner.materials.first
+    select "Wood", from: "Material"
     click_on "Search"
 
     assert has_content?(@top_partner.name)
+    assert has_content?(@bad_partner.name)
+    assert_not has_content?(@medium_partner.name)
   end
 end
