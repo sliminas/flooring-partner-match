@@ -25,10 +25,13 @@ when running the server locally.
 
 ### Display all partners
 
-![all partners](docs/full_page.jpg)
+![all partners](docs/no_filters.png)
 
 ### Search by location
-![search by location](docs/search_by_location.png)
+![search by location](docs/location.png)
+
+### Search by material
+![search by material](docs/material.png)
 
 ### Search by location and material
-![search by location](docs/search_by_location_and_material.png)
+![search by location and material](docs/location_material.png)

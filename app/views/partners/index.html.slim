@@ -2,27 +2,28 @@ h1.partner-heading = link_to "Flooring Partners", root_path
 
 .search
   = form_tag partners_path, method: :get, class: "search__form" do
+    .search__latitude
+      = label_tag :latitude, "Your location's latitude"
+      =< number_field_tag :latitude, params[:latitude], step: 0.000000000000001
+
     .search__material
       = label_tag :material
       =< select_tag :material, options_for_select(Partner.material_options, params[:material]), include_blank: true
+    .search__longitude
+      = label_tag :longitude, "Your location's longitude"
+      =< number_field_tag :longitude, params[:longitude], step: 0.000000000000001
 
-    .search__phone
-      = label_tag :phone
-      =< text_field_tag :phone, params[:phone]
+    = submit_tag "Search"
 
-    .search__latitude
-      = label_tag :latitude, "Your location's latitude"
-      =< text_field_tag :latitude, params[:latitude]
+  .customer-info
+    h2 Your contact details
 
     .search__square_meters
       = label_tag :square_meters
       =< number_field_tag :square_meters, params[:square_meters]
-
-    .search__longitude
-      = label_tag :longitude, "Your location's longitude"
-      =< text_field_tag :longitude, params[:longitude]
-
-    = submit_tag "Search"
+    .search__phone
+      = label_tag :phone
+      =< text_field_tag :phone, params[:phone]
 
 .partners
   - @partners.each do |partner|
@@ -33,6 +34,9 @@ h1.partner-heading = link_to "Flooring Partners", root_path
       .partner__materials
         span.partner__attribute-name Materials:
         span =< partner.materials.join(", ")
+      .partner__radius
+        span.partner__attribute-name Operating radius:
+        span =< partner.operating_radius
       .partner__latitude
         span.partner__attribute-name Latitude:
         span =< partner.latitude
@@ -42,9 +46,6 @@ h1.partner-heading = link_to "Flooring Partners", root_path
       .partner__rating
         span.partner__attribute-name Rating:
         span =< partner.rating
-      .partner__radius
-        span.partner__attribute-name Operating radius:
-        span =< partner.operating_radius
 
       - if partner.distance_km
         .partner__distance
